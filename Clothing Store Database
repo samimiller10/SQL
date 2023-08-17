@@ -1,0 +1,33 @@
+-- Create a clothing store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, inventory INTEGER, sold INTEGER);
+
+INSERT INTO store VALUES (1, "t-shirts", 15, 25, 10);
+INSERT INTO store VALUES (2, "tank tops", 10, 30, 20);
+INSERT INTO store VALUES (3, "sweaters", 25, 15, 5);
+INSERT INTO store VALUES (4, "long sleeves", 20, 20, 8);
+INSERT INTO store VALUES (5, "shorts", 15, 50, 20);
+INSERT INTO store VALUES (6, "jeans", 20, 45, 15);
+INSERT INTO store VALUES (7, "leggings", 12, 30, 15);
+INSERT INTO store VALUES (8, "bodysuits", 15, 30, 10);
+INSERT INTO store VALUES (9, "swimsuits", 20, 25, 12);
+INSERT INTO store VALUES (10, "swim trunks", 18, 30, 15);
+INSERT INTO store VALUES (11, "flip flops", 15, 25, 10);
+INSERT INTO store VALUES (12, "sneakers", 25, 30, 15);
+INSERT INTO store VALUES (13, "bras", 15, 35, 20);
+INSERT INTO store VALUES (14, "underwear", 15, 40, 25);
+INSERT INTO store VALUES (15, "socks", 8, 55, 30);
+
+--organize database by price.
+SELECT * FROM store
+ORDER BY price desc;
+
+--total of items in inventory.
+SELECT SUM(inventory)
+FROM store;
+
+--what are the 5 most popular items?
+SELECT name, sold
+FROM store
+ORDER BY sold desc
+LIMIT 5;
